@@ -1,19 +1,15 @@
 {
-    "builds": [{
-      "src": "vehiclep/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9" 
-      }
-    }],
-    "routes": [
+    "builds": [
       {
-        "src": "/(.*)",
-        "dest": "vehiclep/wsgi.py"
+        "src": "vehiclep",
+        "use": "@vercel/python",
+        "config": {
+          "runtime": "python3.9"
+        }
       }
     ]
   }
+  
   
   
 
