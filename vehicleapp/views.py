@@ -5,6 +5,8 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from django.http import HttpResponse
+from django.db.models import Sum
+
 # show the data 
 def reports(request):
     data=vehicle.objects.all()
@@ -73,3 +75,9 @@ def generate_pdf(request):
     doc.build([table])
     
     return response
+
+    # total miles driven
+def total_miles_driven(request):
+    data = vehicle.objects.aggregate(total_miles=Sum('miles_driven'))['total_miles']
+    return render(request, "total.html", {'data': data})
+    
