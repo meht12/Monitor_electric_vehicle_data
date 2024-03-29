@@ -7,7 +7,7 @@ class vehicle(models.Model):
     model = models.CharField(max_length=100)
     types = models.CharField(max_length=100)
     creation_date=models.DateTimeField(auto_now_add=True)
-    miles_driven= models.IntegerField(max_length=15)
+    miles_driven= models.IntegerField()
 
 def __str__(self):
         return self.License_plate
