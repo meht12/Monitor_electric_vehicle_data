@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "path/to/your/application",
+        "src": "vehiclep/application",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "path/to/your/application/wsgi.py"
+        "dest": "vehiclep/wsgi.py"
       }
     ]
   }
